@@ -382,7 +382,7 @@ __webpack_require__.r(__webpack_exports__);
 
 let AppComponent = class AppComponent {
     constructor() {
-        this.timeUpdated = "Fri Mar 13 2020 23:08:26 GMT+1100 (Australian Eastern Daylight Time)";
+        this.timeUpdated = "Sat Mar 14 2020 00:30:17 GMT+1100 (Australian Eastern Daylight Time)";
     }
     ngOnInit() { }
 };
@@ -511,8 +511,22 @@ var src_assets_statistics_json__WEBPACK_IMPORTED_MODULE_2___namespace = /*#__PUR
 
 
 let CaseNumberComponent = class CaseNumberComponent {
-    constructor() { }
+    constructor() {
+        this.dateShownNumberInSmallScreen = 10;
+        this.dateShownNumberInLargeScreen = 15;
+        this.dateShownNumberInSuperLargeScreen = 20;
+    }
     ngOnInit() {
+        const dateLength = RAW_DATA.deaths_au_arr.length;
+        if (window.innerWidth < 550) {
+            this.xAxisInterval = Math.max(Math.floor(dateLength / this.dateShownNumberInSmallScreen) - 1, 0);
+        }
+        else if (window.innerWidth < 1000) {
+            this.xAxisInterval = Math.max(Math.floor(dateLength / this.dateShownNumberInLargeScreen) - 1, 0);
+        }
+        else {
+            this.xAxisInterval = Math.max(Math.floor(dateLength / this.dateShownNumberInSuperLargeScreen) - 1, 0);
+        }
         this.options = {
             toolbox: {
                 show: true,
@@ -555,7 +569,8 @@ let CaseNumberComponent = class CaseNumberComponent {
                         show: false
                     },
                     axisLabel: {
-                        interval: 0
+                        interval: this.xAxisInterval,
+                        rotate: 50
                     },
                     data: RAW_DATA.date_arr
                 }
@@ -825,7 +840,18 @@ let VicDetailsMapComponent = class VicDetailsMapComponent {
             });
             marker.addListener("click", () => {
                 infoWindow.open(marker.getMap(), marker);
+                if (this.previousInfoWindow) {
+                    this.previousInfoWindow.close();
+                }
+                this.previousInfoWindow = infoWindow;
             });
+            // marker.addListener("mouseover", () => {
+            //   infoWindow.open(marker.getMap(), marker);
+            // });
+            // marker.addListener("mouseout", () => {
+            //   console.log("out");
+            //   infoWindow.close();
+            // });
             marker.setMap(this.map);
         });
     }

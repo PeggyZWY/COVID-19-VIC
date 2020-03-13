@@ -815,7 +815,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       function AppComponent() {
         _classCallCheck(this, AppComponent);
 
-        this.timeUpdated = "Fri Mar 13 2020 23:08:26 GMT+1100 (Australian Eastern Daylight Time)";
+        this.timeUpdated = "Sat Mar 14 2020 00:30:17 GMT+1100 (Australian Eastern Daylight Time)";
       }
 
       _createClass(AppComponent, [{
@@ -1033,11 +1033,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var CaseNumberComponent = /*#__PURE__*/function () {
       function CaseNumberComponent() {
         _classCallCheck(this, CaseNumberComponent);
+
+        this.dateShownNumberInSmallScreen = 10;
+        this.dateShownNumberInLargeScreen = 15;
+        this.dateShownNumberInSuperLargeScreen = 20;
       }
 
       _createClass(CaseNumberComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
+          var dateLength = RAW_DATA.deaths_au_arr.length;
+
+          if (window.innerWidth < 550) {
+            this.xAxisInterval = Math.max(Math.floor(dateLength / this.dateShownNumberInSmallScreen) - 1, 0);
+          } else if (window.innerWidth < 1000) {
+            this.xAxisInterval = Math.max(Math.floor(dateLength / this.dateShownNumberInLargeScreen) - 1, 0);
+          } else {
+            this.xAxisInterval = Math.max(Math.floor(dateLength / this.dateShownNumberInSuperLargeScreen) - 1, 0);
+          }
+
           this.options = {
             toolbox: {
               show: true,
@@ -1084,7 +1098,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 show: false
               },
               axisLabel: {
-                interval: 0
+                interval: this.xAxisInterval,
+                rotate: 50
               },
               data: RAW_DATA.date_arr
             }],
@@ -1412,7 +1427,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             });
             marker.addListener("click", function () {
               infoWindow.open(marker.getMap(), marker);
-            });
+
+              if (_this2.previousInfoWindow) {
+                _this2.previousInfoWindow.close();
+              }
+
+              _this2.previousInfoWindow = infoWindow;
+            }); // marker.addListener("mouseover", () => {
+            //   infoWindow.open(marker.getMap(), marker);
+            // });
+            // marker.addListener("mouseout", () => {
+            //   console.log("out");
+            //   infoWindow.close();
+            // });
+
             marker.setMap(_this2.map);
           });
         }
