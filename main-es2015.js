@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"page-title\">Visualisation of COVID-19 in VIC, Australia</div>\n<div class=\"time-updated\">\n  Last Updated: Fri Mar 13 2020 18:58:26 GMT+1100 (Australian Eastern Daylight\n  Time)\n</div>\n<app-case-number></app-case-number><app-vic-details-map></app-vic-details-map\n><app-vic-details-table></app-vic-details-table>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"page-title\">Visualisation of COVID-19 in VIC, Australia</div>\n<div class=\"time-updated\">\n  Last Updated: Fri Mar 13 2020 18:58:26 GMT+1100 (Australian Eastern Daylight\n  Time)\n</div>\n\n<app-case-number></app-case-number>\n\n<app-vic-details-map></app-vic-details-map>\n\n<app-vic-details-table></app-vic-details-table>\n");
 
 /***/ }),
 
@@ -71,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"mat-elevation-z8\">\n  <div class=\"table-header\">\n    Confirmed Cases Details in VIC\n  </div>\n\n  <mat-form-field>\n    <mat-label>Filter</mat-label>\n    <input matInput (keyup)=\"applyFilter($event)\" />\n  </mat-form-field>\n\n  <table mat-table [dataSource]=\"dataSource\">\n    <!-- caseNumber Column -->\n    <ng-container matColumnDef=\"caseNumber\">\n      <th mat-header-cell *matHeaderCellDef>Case No.</th>\n      <td mat-cell *matCellDef=\"let element\">{{ element.caseNumber }}</td>\n    </ng-container>\n\n    <!-- dateConfirmed Column -->\n    <ng-container matColumnDef=\"dateConfirmed\">\n      <th mat-header-cell *matHeaderCellDef>Date Confirmed</th>\n      <td mat-cell *matCellDef=\"let element\">{{ element.dateConfirmed }}</td>\n    </ng-container>\n\n    <!-- age Column -->\n    <ng-container matColumnDef=\"age\">\n      <th mat-header-cell *matHeaderCellDef>Age</th>\n      <td mat-cell *matCellDef=\"let element\">{{ element.age }}</td>\n    </ng-container>\n\n    <!-- gender Column -->\n    <ng-container matColumnDef=\"gender\">\n      <th mat-header-cell *matHeaderCellDef>Gender</th>\n      <td mat-cell *matCellDef=\"let element\">{{ element.gender }}</td>\n    </ng-container>\n\n    <!-- description Column -->\n    <ng-container matColumnDef=\"description\">\n      <th mat-header-cell *matHeaderCellDef>Description</th>\n      <td mat-cell *matCellDef=\"let element\">\n        <ol>\n          <li *ngFor=\"let n of element.description; let i = index\">\n            {{ n }}\n          </li>\n        </ol>\n      </td>\n    </ng-container>\n\n    <!-- sourceLink Column -->\n    <ng-container matColumnDef=\"sourceLink\">\n      <th mat-header-cell *matHeaderCellDef>Source Link</th>\n      <td mat-cell *matCellDef=\"let element\">\n        <ol>\n          <li *ngFor=\"let n of element.sourceLink; let i = index\">\n            <a href=\"{{ n }}\" target=\"_blank\">{{ n }}</a>\n          </li>\n        </ol>\n      </td>\n    </ng-container>\n\n    <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n    <tr mat-row *matRowDef=\"let row; columns: displayedColumns\"></tr>\n  </table>\n\n  <mat-paginator\n    [pageSizeOptions]=\"[5, 10, 20]\"\n    showFirstLastButtons\n  ></mat-paginator>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"table-wrapper\">\n  <div class=\"mat-elevation-z8\">\n    <div class=\"table-header\">\n      Confirmed Cases Details in VIC\n    </div>\n\n    <mat-form-field>\n      <mat-label>Filter</mat-label>\n      <input matInput (keyup)=\"applyFilter($event)\" />\n    </mat-form-field>\n\n    <table mat-table [dataSource]=\"dataSource\">\n      <!-- caseNumber Column -->\n      <ng-container matColumnDef=\"caseNumber\">\n        <th mat-header-cell *matHeaderCellDef>Case No.</th>\n        <td mat-cell *matCellDef=\"let element\">{{ element.caseNumber }}</td>\n      </ng-container>\n\n      <!-- dateConfirmed Column -->\n      <ng-container matColumnDef=\"dateConfirmed\">\n        <th mat-header-cell *matHeaderCellDef>Date Confirmed</th>\n        <td mat-cell *matCellDef=\"let element\">{{ element.dateConfirmed }}</td>\n      </ng-container>\n\n      <!-- age Column -->\n      <ng-container matColumnDef=\"age\">\n        <th mat-header-cell *matHeaderCellDef>Age</th>\n        <td mat-cell *matCellDef=\"let element\">{{ element.age }}</td>\n      </ng-container>\n\n      <!-- gender Column -->\n      <ng-container matColumnDef=\"gender\">\n        <th mat-header-cell *matHeaderCellDef>Gender</th>\n        <td mat-cell *matCellDef=\"let element\">{{ element.gender }}</td>\n      </ng-container>\n\n      <!-- description Column -->\n      <ng-container matColumnDef=\"description\">\n        <th mat-header-cell *matHeaderCellDef>Description</th>\n        <td mat-cell *matCellDef=\"let element\">\n          <div *ngFor=\"let n of element.description; let i = index\">\n            <span class=\"description-number\">{{ i + 1 }}.</span>{{ n }}\n          </div>\n        </td>\n      </ng-container>\n\n      <!-- sourceLink Column -->\n      <ng-container matColumnDef=\"sourceLink\">\n        <th mat-header-cell *matHeaderCellDef>Source Link</th>\n        <td mat-cell *matCellDef=\"let element\">\n          <div *ngFor=\"let n of element.sourceLink; let i = index\">\n            <a href=\"{{ n }}\" target=\"_blank\">Link {{ i + 1 }}</a>\n          </div>\n        </td>\n      </ng-container>\n\n      <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n      <tr mat-row *matRowDef=\"let row; columns: displayedColumns\"></tr>\n    </table>\n\n    <mat-paginator\n      [pageSizeOptions]=\"[5, 10, 20]\"\n      showFirstLastButtons\n    ></mat-paginator>\n  </div>\n</div>\n");
 
 /***/ }),
 
@@ -362,7 +362,7 @@ AppRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".page-title {\n  font-size: 26px;\n  font-weight: 600;\n  text-align: center;\n  margin-bottom: 5px;\n}\n\n.time-updated {\n  font-size: 12px;\n  text-align: center;\n  margin-bottom: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy95aXlpL2dpdGh1Yi9DT1ZJRC0xOS1WSUNfMjAyMDAzMTAvQ09WSUQxOS1WSUMvc3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGVBQUE7RUFDQSxnQkFBQTtFQUNBLGtCQUFBO0VBQ0Esa0JBQUE7QUNDRjs7QURFQTtFQUNFLGVBQUE7RUFDQSxrQkFBQTtFQUNBLG1CQUFBO0FDQ0YiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucGFnZS10aXRsZSB7XG4gIGZvbnQtc2l6ZTogMjZweDtcbiAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBtYXJnaW4tYm90dG9tOiA1cHg7XG59XG5cbi50aW1lLXVwZGF0ZWQge1xuICBmb250LXNpemU6IDEycHg7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgbWFyZ2luLWJvdHRvbTogMjBweDtcbn0iLCIucGFnZS10aXRsZSB7XG4gIGZvbnQtc2l6ZTogMjZweDtcbiAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBtYXJnaW4tYm90dG9tOiA1cHg7XG59XG5cbi50aW1lLXVwZGF0ZWQge1xuICBmb250LXNpemU6IDEycHg7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgbWFyZ2luLWJvdHRvbTogMjBweDtcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = (".page-title {\n  font-size: 22px;\n  font-weight: 600;\n  text-align: center;\n  margin-bottom: 5px;\n}\n\n.time-updated {\n  display: block;\n  font-size: 12px;\n  text-align: center;\n  margin-bottom: 8px;\n  color: #555;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy95aXlpL2dpdGh1Yi9DT1ZJRC0xOS1WSUNfMjAyMDAzMTAvQ09WSUQxOS1WSUMvc3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGVBQUE7RUFDQSxnQkFBQTtFQUNBLGtCQUFBO0VBQ0Esa0JBQUE7QUNDRjs7QURFQTtFQUNFLGNBQUE7RUFDQSxlQUFBO0VBQ0Esa0JBQUE7RUFDQSxrQkFBQTtFQUNBLFdBQUE7QUNDRiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5wYWdlLXRpdGxlIHtcbiAgZm9udC1zaXplOiAyMnB4O1xuICBmb250LXdlaWdodDogNjAwO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIG1hcmdpbi1ib3R0b206IDVweDtcbn1cblxuLnRpbWUtdXBkYXRlZCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBmb250LXNpemU6IDEycHg7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgbWFyZ2luLWJvdHRvbTogOHB4O1xuICBjb2xvcjogIzU1NTtcbn1cbiIsIi5wYWdlLXRpdGxlIHtcbiAgZm9udC1zaXplOiAyMnB4O1xuICBmb250LXdlaWdodDogNjAwO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIG1hcmdpbi1ib3R0b206IDVweDtcbn1cblxuLnRpbWUtdXBkYXRlZCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBmb250LXNpemU6IDEycHg7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgbWFyZ2luLWJvdHRvbTogOHB4O1xuICBjb2xvcjogIzU1NTtcbn0iXX0= */");
 
 /***/ }),
 
@@ -526,18 +526,18 @@ let CaseNumberComponent = class CaseNumberComponent {
                 }
             },
             title: {
-                text: "AU Confirmed/Deaths/Recovered & VIC Confirmed Cases",
+                text: "Case Statistics in VIC & AU",
                 x: "center"
             },
             tooltip: {
                 trigger: "axis"
             },
             grid: {
-                top: "20%",
+                top: "22%",
                 containLabel: true
             },
             legend: {
-                top: "8%",
+                top: "6%",
                 data: ["AU Deaths", "AU Recovered", "VIC Confirmed", "AU Confirmed"]
             },
             xAxis: [
@@ -601,7 +601,7 @@ let CaseNumberComponent = class CaseNumberComponent {
                     type: "slider",
                     xAxisIndex: 0,
                     filterMode: "empty",
-                    start: 70,
+                    start: this.setDataZoomStart(),
                     end: 100
                 },
                 {
@@ -677,6 +677,15 @@ let CaseNumberComponent = class CaseNumberComponent {
                 }
             ]
         };
+    }
+    setDataZoomStart() {
+        if (window.innerWidth >= 1000) {
+            return 70;
+        }
+        else if (window.innerWidth >= 700) {
+            return 85;
+        }
+        return 90;
     }
 };
 CaseNumberComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
@@ -795,8 +804,9 @@ let VicDetailsMapComponent = class VicDetailsMapComponent {
             info += `<br/><b>Onset of Symptoms up to: </b>${item.onsetOfSymptomsUpTo}`;
         }
         if (item.sourceLink) {
-            item.sourceLink.forEach(link => {
-                info += `<br/><b>Source Link: </b><a href="${link}" target="_blank">${link}</a>`;
+            item.sourceLink.forEach((link, index) => {
+                info += `<br/><b>Source Link: </b><a href="${link}" target="_blank">Link ${index +
+                    1}</a>`;
             });
         }
         return info;
@@ -811,7 +821,7 @@ let VicDetailsMapComponent = class VicDetailsMapComponent {
             const infoWindow = new google.maps.InfoWindow({
                 content: marker.getTitle()
             });
-            marker.addListener("mouseover", () => {
+            marker.addListener("click", () => {
                 infoWindow.open(marker.getMap(), marker);
             });
             marker.setMap(this.map);
@@ -843,7 +853,7 @@ const RAW_DATA = src_assets_public_exposure_data_json__WEBPACK_IMPORTED_MODULE_2
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("table {\n  width: 100%;\n}\n\n.mat-form-field {\n  font-size: 14px;\n  width: 100%;\n}\n\nth.mat-sort-header-sorted {\n  color: black;\n}\n\n.table-header {\n  font-size: 18px;\n  font-weight: 600;\n  text-align: center;\n}\n\n.mat-column-caseNumber {\n  width: 5%;\n}\n\n.mat-column-dateConfirmed {\n  width: 7%;\n}\n\n.mat-column-age {\n  width: 3%;\n}\n\n.mat-column-gender {\n  width: 4%;\n}\n\n.mat-column-sourceLink {\n  width: 20%;\n  word-break: break-all;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy95aXlpL2dpdGh1Yi9DT1ZJRC0xOS1WSUNfMjAyMDAzMTAvQ09WSUQxOS1WSUMvc3JjL2FwcC92aWMtZGV0YWlscy10YWJsZS92aWMtZGV0YWlscy10YWJsZS5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvdmljLWRldGFpbHMtdGFibGUvdmljLWRldGFpbHMtdGFibGUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxXQUFBO0FDQ0Y7O0FERUE7RUFDRSxlQUFBO0VBQ0EsV0FBQTtBQ0NGOztBREVBO0VBQ0UsWUFBQTtBQ0NGOztBREVBO0VBQ0UsZUFBQTtFQUNBLGdCQUFBO0VBQ0Esa0JBQUE7QUNDRjs7QURFQTtFQUNFLFNBQUE7QUNDRjs7QURFQTtFQUNFLFNBQUE7QUNDRjs7QURFQTtFQUNFLFNBQUE7QUNDRjs7QURFQTtFQUNFLFNBQUE7QUNDRjs7QURNQTtFQUNFLFVBQUE7RUFDQSxxQkFBQTtBQ0hGIiwiZmlsZSI6InNyYy9hcHAvdmljLWRldGFpbHMtdGFibGUvdmljLWRldGFpbHMtdGFibGUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJ0YWJsZSB7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4ubWF0LWZvcm0tZmllbGQge1xuICBmb250LXNpemU6IDE0cHg7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG50aC5tYXQtc29ydC1oZWFkZXItc29ydGVkIHtcbiAgY29sb3I6IGJsYWNrO1xufVxuXG4udGFibGUtaGVhZGVyIHtcbiAgZm9udC1zaXplOiAxOHB4O1xuICBmb250LXdlaWdodDogNjAwO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cbi5tYXQtY29sdW1uLWNhc2VOdW1iZXIge1xuICB3aWR0aDogNSU7XG59XG5cbi5tYXQtY29sdW1uLWRhdGVDb25maXJtZWQge1xuICB3aWR0aDogNyU7XG59XG5cbi5tYXQtY29sdW1uLWFnZSB7XG4gIHdpZHRoOiAzJTtcbn1cblxuLm1hdC1jb2x1bW4tZ2VuZGVyIHtcbiAgd2lkdGg6IDQlO1xufVxuXG4ubWF0LWNvbHVtbi1kZXNjcmlwdGlvbiB7XG4gIC8vIHdpZHRoOiA2MCU7XG59XG5cbi5tYXQtY29sdW1uLXNvdXJjZUxpbmsge1xuICB3aWR0aDogMjAlO1xuICB3b3JkLWJyZWFrOiBicmVhay1hbGw7XG59XG4iLCJ0YWJsZSB7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4ubWF0LWZvcm0tZmllbGQge1xuICBmb250LXNpemU6IDE0cHg7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG50aC5tYXQtc29ydC1oZWFkZXItc29ydGVkIHtcbiAgY29sb3I6IGJsYWNrO1xufVxuXG4udGFibGUtaGVhZGVyIHtcbiAgZm9udC1zaXplOiAxOHB4O1xuICBmb250LXdlaWdodDogNjAwO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cbi5tYXQtY29sdW1uLWNhc2VOdW1iZXIge1xuICB3aWR0aDogNSU7XG59XG5cbi5tYXQtY29sdW1uLWRhdGVDb25maXJtZWQge1xuICB3aWR0aDogNyU7XG59XG5cbi5tYXQtY29sdW1uLWFnZSB7XG4gIHdpZHRoOiAzJTtcbn1cblxuLm1hdC1jb2x1bW4tZ2VuZGVyIHtcbiAgd2lkdGg6IDQlO1xufVxuXG4ubWF0LWNvbHVtbi1zb3VyY2VMaW5rIHtcbiAgd2lkdGg6IDIwJTtcbiAgd29yZC1icmVhazogYnJlYWstYWxsO1xufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (".mat-form-field {\n  font-size: 14px;\n  width: 100%;\n}\n\nth.mat-sort-header-sorted {\n  color: black;\n}\n\n.table-header {\n  font-size: 18px;\n  font-weight: 600;\n  text-align: center;\n}\n\n.mat-column-caseNumber {\n  width: 5%;\n  min-width: 50px;\n}\n\n.mat-column-dateConfirmed {\n  width: 7%;\n  min-width: 50px;\n}\n\n.mat-column-age {\n  width: 3%;\n  min-width: 50px;\n}\n\n.mat-column-gender {\n  width: 4%;\n  min-width: 50px;\n}\n\n.mat-column-description {\n  min-width: 300px;\n}\n\n.mat-column-sourceLink {\n  width: 10%;\n  min-width: 50px;\n  word-break: break-all;\n}\n\n.mat-table {\n  overflow-x: scroll;\n  display: block;\n  overflow-x: auto;\n}\n\n.mat-cell,\n.mat-header-cell {\n  padding: 2px 4px;\n}\n\nli {\n  list-style-position: inside;\n}\n\n.description-number {\n  padding-right: 10px;\n  font-weight: 500;\n}\n\ntd.mat-cell:first-of-type,\ntd.mat-footer-cell:first-of-type,\nth.mat-header-cell:first-of-type {\n  padding-left: 0 !important;\n}\n\ntd.mat-cell:last-of-type,\ntd.mat-footer-cell:last-of-type,\nth.mat-header-cell:last-of-type {\n  padding-right: 0 !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy95aXlpL2dpdGh1Yi9DT1ZJRC0xOS1WSUNfMjAyMDAzMTAvQ09WSUQxOS1WSUMvc3JjL2FwcC92aWMtZGV0YWlscy10YWJsZS92aWMtZGV0YWlscy10YWJsZS5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvdmljLWRldGFpbHMtdGFibGUvdmljLWRldGFpbHMtdGFibGUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxlQUFBO0VBQ0EsV0FBQTtBQ0NGOztBREVBO0VBQ0UsWUFBQTtBQ0NGOztBREVBO0VBQ0UsZUFBQTtFQUNBLGdCQUFBO0VBQ0Esa0JBQUE7QUNDRjs7QURFQTtFQUNFLFNBQUE7RUFDQSxlQUFBO0FDQ0Y7O0FERUE7RUFDRSxTQUFBO0VBQ0EsZUFBQTtBQ0NGOztBREVBO0VBQ0UsU0FBQTtFQUNBLGVBQUE7QUNDRjs7QURFQTtFQUNFLFNBQUE7RUFDQSxlQUFBO0FDQ0Y7O0FERUE7RUFDRSxnQkFBQTtBQ0NGOztBREVBO0VBQ0UsVUFBQTtFQUNBLGVBQUE7RUFDQSxxQkFBQTtBQ0NGOztBREVBO0VBQ0Usa0JBQUE7RUFDQSxjQUFBO0VBQ0EsZ0JBQUE7QUNDRjs7QURFQTs7RUFFRSxnQkFBQTtBQ0NGOztBREVBO0VBQ0UsMkJBQUE7QUNDRjs7QURFQTtFQUNFLG1CQUFBO0VBQ0EsZ0JBQUE7QUNDRjs7QURFQTs7O0VBR0UsMEJBQUE7QUNDRjs7QURFQTs7O0VBR0UsMkJBQUE7QUNDRiIsImZpbGUiOiJzcmMvYXBwL3ZpYy1kZXRhaWxzLXRhYmxlL3ZpYy1kZXRhaWxzLXRhYmxlLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1hdC1mb3JtLWZpZWxkIHtcbiAgZm9udC1zaXplOiAxNHB4O1xuICB3aWR0aDogMTAwJTtcbn1cblxudGgubWF0LXNvcnQtaGVhZGVyLXNvcnRlZCB7XG4gIGNvbG9yOiBibGFjaztcbn1cblxuLnRhYmxlLWhlYWRlciB7XG4gIGZvbnQtc2l6ZTogMThweDtcbiAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuXG4ubWF0LWNvbHVtbi1jYXNlTnVtYmVyIHtcbiAgd2lkdGg6IDUlO1xuICBtaW4td2lkdGg6IDUwcHg7XG59XG5cbi5tYXQtY29sdW1uLWRhdGVDb25maXJtZWQge1xuICB3aWR0aDogNyU7XG4gIG1pbi13aWR0aDogNTBweDtcbn1cblxuLm1hdC1jb2x1bW4tYWdlIHtcbiAgd2lkdGg6IDMlO1xuICBtaW4td2lkdGg6IDUwcHg7XG59XG5cbi5tYXQtY29sdW1uLWdlbmRlciB7XG4gIHdpZHRoOiA0JTtcbiAgbWluLXdpZHRoOiA1MHB4O1xufVxuXG4ubWF0LWNvbHVtbi1kZXNjcmlwdGlvbiB7XG4gIG1pbi13aWR0aDogMzAwcHg7XG59XG5cbi5tYXQtY29sdW1uLXNvdXJjZUxpbmsge1xuICB3aWR0aDogMTAlO1xuICBtaW4td2lkdGg6IDUwcHg7XG4gIHdvcmQtYnJlYWs6IGJyZWFrLWFsbDtcbn1cblxuLm1hdC10YWJsZSB7XG4gIG92ZXJmbG93LXg6IHNjcm9sbDtcbiAgZGlzcGxheTogYmxvY2s7XG4gIG92ZXJmbG93LXg6IGF1dG87XG59XG5cbi5tYXQtY2VsbCxcbi5tYXQtaGVhZGVyLWNlbGwge1xuICBwYWRkaW5nOiAycHggNHB4O1xufVxuXG5saSB7XG4gIGxpc3Qtc3R5bGUtcG9zaXRpb246IGluc2lkZTtcbn1cblxuLmRlc2NyaXB0aW9uLW51bWJlciB7XG4gIHBhZGRpbmctcmlnaHQ6IDEwcHg7XG4gIGZvbnQtd2VpZ2h0OiA1MDA7XG59XG5cbnRkLm1hdC1jZWxsOmZpcnN0LW9mLXR5cGUsXG50ZC5tYXQtZm9vdGVyLWNlbGw6Zmlyc3Qtb2YtdHlwZSxcbnRoLm1hdC1oZWFkZXItY2VsbDpmaXJzdC1vZi10eXBlIHtcbiAgcGFkZGluZy1sZWZ0OiAwICFpbXBvcnRhbnQ7XG59XG5cbnRkLm1hdC1jZWxsOmxhc3Qtb2YtdHlwZSxcbnRkLm1hdC1mb290ZXItY2VsbDpsYXN0LW9mLXR5cGUsXG50aC5tYXQtaGVhZGVyLWNlbGw6bGFzdC1vZi10eXBlIHtcbiAgcGFkZGluZy1yaWdodDogMCAhaW1wb3J0YW50O1xufVxuIiwiLm1hdC1mb3JtLWZpZWxkIHtcbiAgZm9udC1zaXplOiAxNHB4O1xuICB3aWR0aDogMTAwJTtcbn1cblxudGgubWF0LXNvcnQtaGVhZGVyLXNvcnRlZCB7XG4gIGNvbG9yOiBibGFjaztcbn1cblxuLnRhYmxlLWhlYWRlciB7XG4gIGZvbnQtc2l6ZTogMThweDtcbiAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuXG4ubWF0LWNvbHVtbi1jYXNlTnVtYmVyIHtcbiAgd2lkdGg6IDUlO1xuICBtaW4td2lkdGg6IDUwcHg7XG59XG5cbi5tYXQtY29sdW1uLWRhdGVDb25maXJtZWQge1xuICB3aWR0aDogNyU7XG4gIG1pbi13aWR0aDogNTBweDtcbn1cblxuLm1hdC1jb2x1bW4tYWdlIHtcbiAgd2lkdGg6IDMlO1xuICBtaW4td2lkdGg6IDUwcHg7XG59XG5cbi5tYXQtY29sdW1uLWdlbmRlciB7XG4gIHdpZHRoOiA0JTtcbiAgbWluLXdpZHRoOiA1MHB4O1xufVxuXG4ubWF0LWNvbHVtbi1kZXNjcmlwdGlvbiB7XG4gIG1pbi13aWR0aDogMzAwcHg7XG59XG5cbi5tYXQtY29sdW1uLXNvdXJjZUxpbmsge1xuICB3aWR0aDogMTAlO1xuICBtaW4td2lkdGg6IDUwcHg7XG4gIHdvcmQtYnJlYWs6IGJyZWFrLWFsbDtcbn1cblxuLm1hdC10YWJsZSB7XG4gIG92ZXJmbG93LXg6IHNjcm9sbDtcbiAgZGlzcGxheTogYmxvY2s7XG4gIG92ZXJmbG93LXg6IGF1dG87XG59XG5cbi5tYXQtY2VsbCxcbi5tYXQtaGVhZGVyLWNlbGwge1xuICBwYWRkaW5nOiAycHggNHB4O1xufVxuXG5saSB7XG4gIGxpc3Qtc3R5bGUtcG9zaXRpb246IGluc2lkZTtcbn1cblxuLmRlc2NyaXB0aW9uLW51bWJlciB7XG4gIHBhZGRpbmctcmlnaHQ6IDEwcHg7XG4gIGZvbnQtd2VpZ2h0OiA1MDA7XG59XG5cbnRkLm1hdC1jZWxsOmZpcnN0LW9mLXR5cGUsXG50ZC5tYXQtZm9vdGVyLWNlbGw6Zmlyc3Qtb2YtdHlwZSxcbnRoLm1hdC1oZWFkZXItY2VsbDpmaXJzdC1vZi10eXBlIHtcbiAgcGFkZGluZy1sZWZ0OiAwICFpbXBvcnRhbnQ7XG59XG5cbnRkLm1hdC1jZWxsOmxhc3Qtb2YtdHlwZSxcbnRkLm1hdC1mb290ZXItY2VsbDpsYXN0LW9mLXR5cGUsXG50aC5tYXQtaGVhZGVyLWNlbGw6bGFzdC1vZi10eXBlIHtcbiAgcGFkZGluZy1yaWdodDogMCAhaW1wb3J0YW50O1xufSJdfQ== */");
 
 /***/ }),
 
